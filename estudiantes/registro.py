@@ -29,3 +29,9 @@ def mostrar_estudiantes(estudiantes):
     for estudiante in estudiantes_ordenados:
         print(f"{estudiante['nombre']:<20} | {estudiante['nota']:5.2f}")
     print("-" * 30)
+
+def calcular_promedio(estudiantes):
+    if not estudiantes:
+        return 0.0
+    total = sum(estudiante['nota'] for estudiante in estudiantes)
+    return total / len(estudiantes)
