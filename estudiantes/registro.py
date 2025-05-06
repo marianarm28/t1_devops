@@ -17,3 +17,15 @@ def cargar_estudiantes(archivo_csv):
             except ValueError:
                 print(f"Advertencia: Nota inválida para {fila['nombre']}")
     return estudiantes
+
+def mostrar_estudiantes(estudiantes):
+    # Ordenar estudiantes alfabéticamente
+    estudiantes_ordenados = sorted(estudiantes, key=lambda x: x['nombre'])
+    
+    # Imprimir tabla
+    print("-" * 30)
+    print(f"{'Nombre':<20} | {'Nota':>5}")
+    print("-" * 30)
+    for estudiante in estudiantes_ordenados:
+        print(f"{estudiante['nombre']:<20} | {estudiante['nota']:5.2f}")
+    print("-" * 30)
